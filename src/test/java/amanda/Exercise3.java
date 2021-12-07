@@ -24,8 +24,8 @@ public class Exercise3 {
 
 
 		// verify the page title
-		String actualTitle = "Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more";
-		String expectedTitle = "Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more";
+		String actualTitle = driver.getTitle();
+		String expectedTitle = "Amazon.com. Spend less. Smile more.";
 
 		if (actualTitle.equals(expectedTitle)) {
 			System.out.println("Title Verified");
@@ -47,7 +47,7 @@ public class Exercise3 {
 
 		// verify the page title is "Amazon.com shopping cart"
 		String actualPTShoppingCart = driver.getTitle();
-		String expectedPTShoppingCart = " Amazon.com Shopping cart";
+		String expectedPTShoppingCart = "Amazon.com Shopping Cart";
 
 		if (actualPTShoppingCart.equals(expectedPTShoppingCart)) {
 			System.out.println("Verified Page title for Amazon shopping cart");
