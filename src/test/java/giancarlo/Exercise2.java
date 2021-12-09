@@ -2,6 +2,7 @@ package giancarlo;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -51,7 +52,8 @@ public class Exercise2 {
 		driver.findElement(By.name("postalCode")).sendKeys("00674");
 		
 		//select dropdown
-		Select dropdown = new Select(driver.findElement(By.name("country")));
+		WebElement countryDropdown = driver.findElement(By.name("country"));
+		Select dropdown = new Select(countryDropdown);
 		dropdown.selectByValue("PUERTO RICO");
 		
 		//keep filling form
@@ -60,18 +62,16 @@ public class Exercise2 {
 		driver.findElement(By.name("confirmPassword")).sendKeys("123456");
 		driver.findElement(By.name("submit")).click();
 		
-		/*
 		//check confirmation message
 		String actualMessage = driver.findElement(By.xpath(
 				"/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/p[2]/font")).getText();
-		String expectedMessage = "Thank you for registering. You may now sign-in using the user name and password you've just entered.";
+		String expectedMessage = "Thank you for registering.";
 		
-		if(actualMessage.equals(expectedMessage)) {
+		if(actualMessage.contains(expectedMessage)) {
 			System.out.println("The testcase passed");
 		} else {
 			System.out.println("The testcase failed");
 		}
-		*/
 		
 		//wait
 		Thread.sleep(1000);
