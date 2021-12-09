@@ -86,7 +86,7 @@ public class Exercise3 {
 		
 	//a. If TRUE, then print “The testcase passed.”
 		
-		if(textMessage.equals(expectedMessage)) {
+		if(textMessage.contains(expectedMessage)) {
 		System.out.println("The testcase passed.");	
 		}
 		
