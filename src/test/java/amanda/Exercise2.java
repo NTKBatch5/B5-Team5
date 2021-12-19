@@ -2,7 +2,9 @@ package amanda;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class Exercise2 {
 	
@@ -41,28 +43,38 @@ public class Exercise2 {
 		driver.findElement(By.name("firstName")).sendKeys("Amanda");
 
 		// enter last name
-		driver.findElement(By.name("lastName")).sendKeys("Florea");
+		driver.findElement(By.name("lastName")).sendKeys("Flo");
 
 		// enter phone number
 		driver.findElement(By.name("phone")).sendKeys("703-354-4206");
 
 		// enter email
-		driver.findElement(By.id("userName")).sendKeys("Amanda.florea@outlook.com");
+		driver.findElement(By.id("userName")).sendKeys("Amanda@outlook.com");
 
 		// enter address
 		driver.findElement(By.name("address1")).sendKeys("123 mulberry st");
 
 		// enter city
-		driver.findElement(By.name("city")).sendKeys("Woodbridge");
+		driver.findElement(By.name("city")).sendKeys("WB");
 
 		// enter state
 		driver.findElement(By.name("state")).sendKeys("VA");
 
 		// enter zipcode
-		driver.findElement(By.name("postalCode")).sendKeys("22193");
+		driver.findElement(By.name("postalCode")).sendKeys("221931");
+		
+		//Enter country
+		WebElement countryDropdown = driver.findElement(By.name("country"));
+		Thread.sleep(2000);
+		
+		//create a select object
+		Select countrySelect = new Select(countryDropdown);
+		
+		countrySelect.selectByValue("EL SALVADOR");
+				
 
 		// enter username
-		driver.findElement(By.id("email")).sendKeys("Amanda.florea@outlook.com");
+		driver.findElement(By.id("email")).sendKeys("Amanda@outlook.com");
 
 		// enter password
 		driver.findElement(By.name("password")).sendKeys("123456");
